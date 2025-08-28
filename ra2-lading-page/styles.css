@@ -1,0 +1,333 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0B3B2E;
+    color: white;
+    scroll-behavior: smooth;
+}
+
+.hero-bg {
+    background-color: #0B3B2E;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-bg::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(11, 59, 46, 0.8) 0%, rgba(0, 0, 0, 0.5) 70%);
+    opacity: 0.3;
+    animation: rotate 30s linear infinite;
+    z-index: 0;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn-glow:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.code-block {
+    background-color: #0D1E19;
+    border-left: 3px solid #2ECC71;
+}
+
+.form-input {
+    background-color: transparent;
+    border-bottom: 1px solid white;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    border-bottom: 1px solid #2ECC71;
+    outline: none;
+}
+
+.geometric-shape {
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.shape-1 {
+    top: 20%;
+    left: 10%;
+    width: 100px;
+    height: 100px;
+    transform: rotate(45deg);
+}
+
+.shape-2 {
+    bottom: 15%;
+    right: 10%;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.shape-3 {
+    top: 60%;
+    left: 70%;
+    width: 80px;
+    height: 80px;
+    transform: rotate(20deg);
+}
+
+/* Estilos para a Galeria de Especialidades */
+.solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Aumentei um pouco o tamanho mínimo */
+    gap: 1.5rem;
+}
+
+.solution-card {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.solution-card:hover {
+    transform: translateY(-8px); /* Efeito de elevação um pouco mais pronunciado */
+    background-color: rgba(0, 0, 0, 0.3);
+    border-color: #2ECC71; /* Borda verde no hover */
+}
+
+.solution-icon {
+    font-size: 3rem; /* 48px */
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.9); /* Cor padrão do ícone */
+    transition: color 0.3s ease;
+}
+
+.solution-name {
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8); /* Cor padrão do texto */
+    transition: color 0.3s ease;
+}
+
+/* Efeito de hover para o ícone e o nome */
+.solution-card:hover .solution-icon,
+.solution-card:hover .solution-name {
+    color: #2ECC71; /* Cor verde no hover */
+}
+
+/* Estilos para a Seção de Valores (Pilares) */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.value-card {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    background-color: rgba(46, 204, 113, 0.05);
+    border-color: rgba(46, 204, 113, 0.4);
+}
+
+.value-icon {
+    font-size: 2.5rem; /* 40px */
+    margin-bottom: 1rem;
+    color: #2ECC71; /* Ícones já começam com a cor de destaque */
+}
+
+.value-title {
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 700; /* font-bold */
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.value-description {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+}
+
+.terminal {
+    background-color: #0D0F10;
+    border-left: 4px solid #4ADE80;
+}
+
+.terminal-header {
+    background-color: #1A1D21;
+}
+
+.terminal-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.code-keyword {
+    color: #F472B6;
+}
+
+.code-string {
+    color: #4ADE80;
+}
+
+.code-function {
+    color: #60A5FA;
+}
+
+.code-comment {
+    color: #6B7280;
+}
+
+/* Estilos para a nova seção Sobre Nós */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Começa com uma coluna para mobile */
+    gap: 3rem;
+    align-items: center;
+}
+
+@media (min-width: 768px) { /* md: */
+    .about-grid {
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas para telas maiores */
+    }
+}
+
+.about-visual {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.about-visual:hover {
+    transform: scale(1.03);
+    border-color: rgba(46, 204, 113, 0.4);
+}
+
+.feature-list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.feature-list-icon {
+    font-size: 1.25rem;
+    color: #4ADE80; /* Verde para os ícones */
+    margin-top: 5px; /* Alinhamento vertical com o texto */
+}
+
+/* Estilos para o Formulário de Contato Aprimorado */
+.form-input-v2 {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 0.85rem 1rem; /* Aumentei um pouco o padding para mais "respiro" */
+    color: white;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.form-input-v2::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.form-input-v2:focus {
+    outline: none;
+    border-color: #4ADE80; /* Borda verde no foco */
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.2); /* Brilho sutil no foco */
+}
+
+/* Estilos para o Novo Rodapé Estruturado */
+.site-footer {
+    background-color: #0A2E24; /* Um tom ligeiramente diferente do body para contraste */
+    border-top: 1px solid rgba(74, 222, 128, 0.2); /* Borda verde sutil no topo */
+    font-size: 0.9rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Uma coluna para mobile */
+    gap: 2.5rem;
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.footer-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.footer-links a {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #4ADE80; /* Verde */
+}
+
+.footer-socials {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-socials a {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+    color: #4ADE80;
+    transform: translateY(-2px);
+}
+
+.footer-copyright {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+}
