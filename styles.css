@@ -10,10 +10,46 @@
     scroll-behavior: smooth;
 }
 
-/* 
-   O bloco de código para .hero-bg::before e @keyframes rotate 
-   foi completamente REMOVIDO daqui.
-*/
+
+/* Estilo Base Comum */
+.btn-cta {
+    padding: 0.75rem 2rem; /* 12px 32px */
+    border-radius: 9999px; /* rounded-full */
+    font-weight: 600; /* font-semibold */
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem; /* Espaço entre o texto e o ícone */
+    border: 2px solid transparent; /* Borda transparente para manter o tamanho no hover */
+}
+
+/* Botão Primário (Fundo Sólido) */
+.btn-primary {
+    background-color: #2ECC71; /* Verde */
+    color: black;
+}
+
+.btn-primary:hover {
+    background-color: #27ae60; /* Verde mais escuro */
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(46, 204, 113, 0.2);
+}
+
+/* Botão Secundário (Fantasma/Ghost) */
+.btn-secondary {
+    background-color: transparent;
+    color: white;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-secondary:hover {
+    background-color: white;
+    border-color: white;
+    color: black;
+    transform: translateY(-3px);
+}
+
 
 .card-hover:hover {
     transform: translateY(-5px);
@@ -346,3 +382,56 @@
     position: relative;
     z-index: 2;
 }
+
+/* Estilos para a Vitrine de Projeto com Efeito de Revelação */
+.project-showcase-reveal {
+    max-width: 56rem; /* 896px */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.project-details-reveal {
+    max-width: 48rem; /* 768px */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem; /* Espaçamento entre o texto e a imagem */
+}
+
+.project-label-reveal {
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #4ADE80;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.project-image-reveal-wrapper {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    
+    /* Prepara para a animação */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-image-reveal-wrapper.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-image-reveal-wrapper img {
+    display: block;
+    width: 100%;
+    /* Opcional: Efeito de Paralaxe Sutil */
+    transition: transform 0.6s ease-out;
+}
+
+/* Efeito de hover continua o mesmo, mas agora na imagem revelada */
+.project-image-reveal-wrapper:hover img {
+    transform: scale(1.05);
+}
+

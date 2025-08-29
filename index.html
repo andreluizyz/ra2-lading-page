@@ -27,16 +27,24 @@
             <div class="mb-12">
                 <!-- O DIV COM O LOGO FOI REMOVIDO -->
                 
-                <h1 class="text-5xl md:text-6xl font-bold mb-4 leading-tight">Inovação e Eficiência em Tecnologia</h1>
-                <p class="text-xl md:text-2xl opacity-80 mb-10">Soluções digitais modernas que impulsionam o futuro do seu negócio.</p>
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <button class="btn-glow bg-black hover:bg-gray-900 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105">
-                        <a href="#quem-somos">Conheça a RA²</a>
-                    </button>
-                    <button class="btn-glow bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105">
-                        <a href="#contato">Fale Conosco</a>
-                    </button>
+                <h1 class="text-5xl md:text-6xl font-bold mb-4 leading-tight">Inovação em Cada Solução</h1>
+                <p class="text-xl md:text-2xl opacity-80 mb-10">Desenvolvemos tecnologia que conecta pessoas, processos e resultados de forma eficiente e moderna.</p>
+                <!-- Div dos botões com o novo HTML -->
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    
+                    <!-- Botão Secundário (Ghost) -->
+                    <a href="#quem-somos" class="btn-cta btn-secondary">
+                        Conheça a RA²
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+
+                    <!-- Botão Primário (Principal) -->
+                    <a href="#contato" class="btn-cta btn-primary">
+                        Fale Conosco
+                    </a>
+
                 </div>
+
             </div>
         </div>
     </section>
@@ -177,24 +185,29 @@
 
 
     
-    <!-- Featured Product -->
+    <!-- Featured Project Section -->
     <section class="py-20 px-6 fade-in">
-        <div class="max-w-4xl mx-auto">
-            <div class="card-hover bg-black bg-opacity-20 p-8 rounded-lg border border-white border-opacity-20 transition-all duration-300">
-                <div class="flex flex-col md:flex-row items-center gap-8">
-                    <div class="flex-1">
-                        <h2 class="text-2xl md:text-3xl font-bold mb-4">ALOCATUS</h2>
-                        <p class="opacity-80 mb-6">Nosso sistema de gestão inteligente que revoluciona a maneira como você gerencia recursos e equipes.</p>
-                    </div>
-                    <div class="flex-1 bg-black bg-opacity-30 p-4 rounded-lg border border-white border-opacity-10">
-                        <div class="h-48 flex items-center justify-center text-gray-400">
-                            <i class="fas fa-desktop text-5xl"></i>
-                        </div>
-                    </div>
-                </div>
+        <div class="project-showcase-reveal">
+            
+            <!-- Detalhes do Projeto -->
+            <div class="project-details-reveal">
+                <div class="project-label-reveal">Projeto em Destaque</div>
+                <h3 class="text-4xl md:text-5xl font-bold mb-4">ALOCATUS</h3>
+                <p class="text-lg md:text-xl opacity-80 leading-relaxed">
+                    Uma plataforma de gestão escolar focada em atribuição de aulas que simplifica processos, organiza recursos e garante transparência e eficiência, economizando tempo e reduzindo erros para toda a comunidade escolar.
+                </p>
             </div>
+
+            <!-- Imagem que será revelada -->
+            <div class="project-image-reveal-wrapper">
+                <img src="img/interface-alocatus.jpeg" alt="Interface do sistema de gestão escolar Alocatus">
+            </div>
+
         </div>
     </section>
+
+
+
     
     <!-- Contact Section -->
     <section class="py-20 px-6 bg-black bg-opacity-20 fade-in" id="contato">

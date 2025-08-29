@@ -5,6 +5,8 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
+    
+
     // --- [1] Animação de Fade-in ao Rolar a Página ---
     const fadeElements = document.querySelectorAll('.fade-in');
     if (fadeElements.length > 0) {
@@ -115,5 +117,25 @@ document.addEventListener('DOMContentLoaded', function() {
             "retina_detect": true
         });
     }
+
+    // --- [4] Animação de Revelação do Projeto ---
+    const projectImageWrapper = document.querySelector('.project-image-reveal-wrapper');
+
+    if (projectImageWrapper) {
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Opcional: para a observação após a primeira animação
+                    revealObserver.unobserve(entry.target); 
+                }
+            });
+        }, {
+            threshold: 0.1 // A animação começa quando 10% da imagem está visível
+        });
+
+        revealObserver.observe(projectImageWrapper);
+    }
+
 
 }); // Fim do único addEventListener
