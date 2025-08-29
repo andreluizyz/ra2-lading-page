@@ -1,37 +1,19 @@
-body {
+/* =================================================================
+   RA² - Arquivo de Estilos Principal
+   Versão Final e Corrigida (sem a animação de fundo)
+   ================================================================= */
+
+   body {
     font-family: 'Poppins', sans-serif;
     background-color: #0B3B2E;
     color: white;
     scroll-behavior: smooth;
 }
 
-.hero-bg {
-    background-color: #0B3B2E;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-bg::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(11, 59, 46, 0.8) 0%, rgba(0, 0, 0, 0.5) 70%);
-    opacity: 0.3;
-    animation: rotate 30s linear infinite;
-    z-index: 0;
-}
-
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
+/* 
+   O bloco de código para .hero-bg::before e @keyframes rotate 
+   foi completamente REMOVIDO daqui.
+*/
 
 .card-hover:hover {
     transform: translateY(-5px);
@@ -51,55 +33,11 @@ body {
     to { opacity: 1; }
 }
 
-.code-block {
-    background-color: #0D1E19;
-    border-left: 3px solid #2ECC71;
-}
 
-.form-input {
-    background-color: transparent;
-    border-bottom: 1px solid white;
-    transition: all 0.3s ease;
-}
-
-.form-input:focus {
-    border-bottom: 1px solid #2ECC71;
-    outline: none;
-}
-
-.geometric-shape {
-    position: absolute;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.shape-1 {
-    top: 20%;
-    left: 10%;
-    width: 100px;
-    height: 100px;
-    transform: rotate(45deg);
-}
-
-.shape-2 {
-    bottom: 15%;
-    right: 10%;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-}
-
-.shape-3 {
-    top: 60%;
-    left: 70%;
-    width: 80px;
-    height: 80px;
-    transform: rotate(20deg);
-}
-
-/* Estilos para a Galeria de Especialidades */
+/* Estilos para a Galeria de Especialidades (REVISADO) */
 .solutions-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Aumentei um pouco o tamanho mínimo */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
 }
 
@@ -110,33 +48,35 @@ body {
     padding: 2rem;
     text-align: center;
     transition: all 0.3s ease;
-    cursor: default;
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
 }
 
 .solution-card:hover {
-    transform: translateY(-8px); /* Efeito de elevação um pouco mais pronunciado */
-    background-color: rgba(0, 0, 0, 0.3);
-    border-color: #2ECC71; /* Borda verde no hover */
+    transform: translateY(-8px);
+    background-color: rgba(46, 204, 113, 0.1); /* Fundo verde mais sutil no hover */
+    border-color: #2ECC71;
 }
 
 .solution-icon {
-    font-size: 3rem; /* 48px */
+    font-size: 3rem;
     margin-bottom: 1rem;
-    color: rgba(255, 255, 255, 0.9); /* Cor padrão do ícone */
-    transition: color 0.3s ease;
+    color: #2ECC71;
+    transition: all 0.3s ease;
 }
 
 .solution-name {
-    font-size: 1.125rem; /* text-lg */
+    font-size: 1.125rem;
     font-weight: 600;
-    color: rgba(255, 255, 255, 0.8); /* Cor padrão do texto */
-    transition: color 0.3s ease;
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
 }
 
-/* Efeito de hover para o ícone e o nome */
-.solution-card:hover .solution-icon,
+.solution-card:hover .solution-icon {
+    transform: scale(1.1);
+}
+
 .solution-card:hover .solution-name {
-    color: #2ECC71; /* Cor verde no hover */
+    color: white;
 }
 
 /* Estilos para a Seção de Valores (Pilares) */
@@ -144,6 +84,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
+    justify-items: center; /* Centraliza o último item */
 }
 
 .value-card {
@@ -162,14 +103,14 @@ body {
 }
 
 .value-icon {
-    font-size: 2.5rem; /* 40px */
+    font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: #2ECC71; /* Ícones já começam com a cor de destaque */
+    color: #2ECC71;
 }
 
 .value-title {
-    font-size: 1.25rem; /* text-xl */
-    font-weight: 700; /* font-bold */
+    font-size: 1.25rem;
+    font-weight: 700;
     margin-bottom: 0.5rem;
     color: white;
 }
@@ -180,9 +121,11 @@ body {
     line-height: 1.6;
 }
 
+/* Estilos para o Terminal de Código */
 .terminal {
     background-color: #0D0F10;
     border-left: 4px solid #4ADE80;
+    border-radius: 8px;
 }
 
 .terminal-header {
@@ -195,33 +138,23 @@ body {
     border-radius: 50%;
 }
 
-.code-keyword {
-    color: #F472B6;
-}
-
-.code-string {
-    color: #4ADE80;
-}
-
-.code-function {
-    color: #60A5FA;
-}
-
-.code-comment {
-    color: #6B7280;
-}
+.code-keyword, .code-decorator, .code-boolean { color: #F472B6; }
+.code-string { color: #4ADE80; }
+.code-function, .code-class-name { color: #60A5FA; }
+.code-comment { color: #6B7280; }
+.code-parameter { color: #A5B4FC; }
 
 /* Estilos para a nova seção Sobre Nós */
 .about-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Começa com uma coluna para mobile */
+    grid-template-columns: 1fr;
     gap: 3rem;
     align-items: center;
 }
 
-@media (min-width: 768px) { /* md: */
+@media (min-width: 768px) {
     .about-grid {
-        grid-template-columns: repeat(2, 1fr); /* Duas colunas para telas maiores */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -241,25 +174,13 @@ body {
     border-color: rgba(46, 204, 113, 0.4);
 }
 
-.feature-list-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-}
-
-.feature-list-icon {
-    font-size: 1.25rem;
-    color: #4ADE80; /* Verde para os ícones */
-    margin-top: 5px; /* Alinhamento vertical com o texto */
-}
-
 /* Estilos para o Formulário de Contato Aprimorado */
 .form-input-v2 {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 8px;
-    padding: 0.85rem 1rem; /* Aumentei um pouco o padding para mais "respiro" */
+    padding: 0.85rem 1rem;
     color: white;
     transition: all 0.3s ease;
     font-size: 1rem;
@@ -271,27 +192,32 @@ body {
 
 .form-input-v2:focus {
     outline: none;
-    border-color: #4ADE80; /* Borda verde no foco */
+    border-color: #4ADE80;
     background-color: rgba(0, 0, 0, 0.3);
-    box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.2); /* Brilho sutil no foco */
+    box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.2);
 }
 
 /* Estilos para o Novo Rodapé Estruturado */
 .site-footer {
-    background-color: #0A2E24; /* Um tom ligeiramente diferente do body para contraste */
-    border-top: 1px solid rgba(74, 222, 128, 0.2); /* Borda verde sutil no topo */
+    background-color: #0A2E24;
+    border-top: 1px solid rgba(74, 222, 128, 0.2);
     font-size: 0.9rem;
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(1, 1fr); /* Uma coluna para mobile */
+    grid-template-columns: repeat(1, 1fr);
     gap: 2.5rem;
     padding-bottom: 2.5rem;
     margin-bottom: 2.5rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+@media (min-width: 768px) {
+    .footer-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
 
 .footer-title {
     font-size: 1.1rem;
@@ -308,7 +234,7 @@ body {
 }
 
 .footer-links a:hover {
-    color: #4ADE80; /* Verde */
+    color: #4ADE80;
 }
 
 .footer-socials {
@@ -330,4 +256,93 @@ body {
 .footer-copyright {
     text-align: center;
     color: rgba(255, 255, 255, 0.5);
+}
+
+/* Estilos para o Modal de Serviços */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* Desativado por padrão */
+}
+
+.modal-overlay:not(.hidden) {
+    opacity: 1;
+    pointer-events: auto; /* Ativado quando visível */
+}
+
+.modal-container {
+    background-color: #0D0F10;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2.5rem;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay:not(.hidden) .modal-container {
+    transform: scale(1);
+}
+
+.modal-close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal-close-button:hover {
+    color: #4ADE80;
+    transform: rotate(90deg);
+}
+
+.modal-icon {
+    font-size: 3.5rem;
+    color: #4ADE80;
+    margin-bottom: 1.5rem;
+}
+
+.modal-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.modal-description {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+}
+
+/* Estilos para a Animação de Partículas */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.hero-bg .container {
+    position: relative;
+    z-index: 2;
 }

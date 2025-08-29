@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/15d5d5e5e5.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -17,24 +18,29 @@
     
     <!-- Hero Section -->
     <section class="hero-bg min-h-screen flex items-center justify-center relative z-10 fade-in">
-        <div class="container mx-auto px-6 py-20 text-center">
+        
+        <!-- TELA PARA A ANIMAÇÃO DE PARTÍCULAS -->
+        <div id="particles-js" class="absolute top-0 left-0 w-full h-full z-0"></div>
+
+        <!-- Conteúdo da Hero Section (agora na frente da animação) -->
+        <div class="container mx-auto px-6 py-20 text-center relative z-10">
             <div class="mb-12">
-                <div class="text-6xl md:text-8xl font-bold tracking-tighter mb-6">
-                    <span class="text-white">RA</span><span class="text-green-300">²</span>
-                </div>
-                <h1 class="text-3xl md:text-5xl font-bold mb-4">Inovação e eficiência em tecnologia</h1>
-                <p class="text-xl md:text-2xl opacity-80 mb-10">Soluções digitais modernas para diferentes setores</p>
+                <!-- O DIV COM O LOGO FOI REMOVIDO -->
+                
+                <h1 class="text-5xl md:text-6xl font-bold mb-4 leading-tight">Inovação e Eficiência em Tecnologia</h1>
+                <p class="text-xl md:text-2xl opacity-80 mb-10">Soluções digitais modernas que impulsionam o futuro do seu negócio.</p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
                     <button class="btn-glow bg-black hover:bg-gray-900 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105">
-                        <a href="#quem-somos">Saiba mais</a>
+                        <a href="#quem-somos">Conheça a RA²</a>
                     </button>
                     <button class="btn-glow bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105">
-                        <a href="#contato">Fale conosco</a>
+                        <a href="#contato">Fale Conosco</a>
                     </button>
                 </div>
             </div>
         </div>
     </section>
+
     
     <!-- About Section -->
     <section class="py-20 px-6 fade-in" id="quem-somos">
@@ -49,12 +55,12 @@
                     </p>
                 </div>
 
-                <!-- Coluna Visual (Direita) -->
-                <div class="about-visual">
-                    <!-- Você pode trocar este ícone por uma imagem: <img src="sua-imagem.jpg" class="rounded-lg object-cover w-full h-full"> -->
-                    <div class="text-8xl font-bold tracking-tighter">
-                        <span class="text-white">RA</span><span class="text-green-400">²</span>
-                    </div>
+                <!-- Coluna Visual (Direita) - CORRIGIDA -->
+                <div class="about-visual flex items-center justify-center p-8 md:p-12">
+                    
+                    <!-- A imagem agora está sozinha, sem o div extra, e com classes de tamanho -->
+                    <img src="img/logo-ra.svg" alt="Logo da RA² Tecnologia" class="w-full h-auto">
+                    
                 </div>
 
             </div>
@@ -62,8 +68,9 @@
     </section>
 
 
-    <!-- Services Section: Software Solutions Gallery -->
-    <section class="py-20 px-6 bg-black bg-opacity-20 fade-in">
+
+    <!-- Services Section: Software Solutions Gallery (AJUSTADO) -->
+    <section class="py-20 px-6 bg-black bg-opacity-20 fade-in" id="o-que-fazemos">
         <div class="max-w-5xl mx-auto text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">O que fazemos</h2>
             <p class="text-xl opacity-80 mb-16 max-w-3xl mx-auto">Da web ao mobile, criamos soluções digitais de alta performance para cada necessidade do seu negócio.</p>
@@ -71,40 +78,33 @@
             <div class="solutions-grid">
                 
                 <!-- Card 1: Aplicações Web -->
-                <div class="solution-card">
-                    <div class="solution-icon">
-                        <i class="fa-solid fa-globe"></i>
-                    </div>
+                <div class="solution-card" data-service="web">
+                    <div class="solution-icon"><i class="fa-solid fa-globe"></i></div>
                     <h3 class="solution-name">Aplicações Web</h3>
                 </div>
 
                 <!-- Card 2: Apps Mobile -->
-                <div class="solution-card">
-                    <div class="solution-icon">
-                        <i class="fa-solid fa-mobile-screen"></i>
-                    </div>
+                <div class="solution-card" data-service="mobile">
+                    <div class="solution-icon"><i class="fa-solid fa-mobile-screen"></i></div>
                     <h3 class="solution-name">Apps Mobile</h3>
                 </div>
 
                 <!-- Card 3: Sistemas de Gestão -->
-                <div class="solution-card">
-                    <div class="solution-icon">
-                        <i class="fa-solid fa-chart-diagram"></i>
-                    </div>
+                <div class="solution-card" data-service="gestao">
+                    <div class="solution-icon"><i class="fa-solid fa-chart-diagram"></i></div>
                     <h3 class="solution-name">Sistemas de Gestão</h3>
                 </div>
 
                 <!-- Card 4: APIs e Microsserviços -->
-                <div class="solution-card">
-                    <div class="solution-icon">
-                        <i class="fa-solid fa-microchip"></i>
-                    </div>
+                <div class="solution-card" data-service="apis">
+                    <div class="solution-icon"><i class="fa-solid fa-microchip"></i></div>
                     <h3 class="solution-name">APIs & Microsserviços</h3>
                 </div>
 
             </div>
         </div>
     </section>
+
 
     
     <!-- Values Section -->
@@ -161,7 +161,7 @@
                 </div>
                 <div class="p-6 font-mono text-sm md:text-base text-green-400">
     <pre>
-    <span class="code-comment"># RA² - Demonstração simples de valor da empresa</span>
+    <span class="code-comment"># RA²</span>
 
     <span class="code-keyword">def</span> <span class="code-function">solucao_ra2</span>(problema):
         <span class="code-keyword">return</span> f"RA² resolve '{problema}' com inovação, eficiência e tecnologia."
@@ -185,9 +185,6 @@
                     <div class="flex-1">
                         <h2 class="text-2xl md:text-3xl font-bold mb-4">ALOCATUS</h2>
                         <p class="opacity-80 mb-6">Nosso sistema de gestão inteligente que revoluciona a maneira como você gerencia recursos e equipes.</p>
-                        <button class="btn-glow bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full font-medium transition-all duration-300">
-                            Saiba mais
-                        </button>
                     </div>
                     <div class="flex-1 bg-black bg-opacity-30 p-4 rounded-lg border border-white border-opacity-10">
                         <div class="h-48 flex items-center justify-center text-gray-400">
@@ -254,9 +251,9 @@
                 <div>
                     <h3 class="footer-title">Navegue</h3>
                     <div class="footer-links">
-                        <a href="#about-section">Sobre Nós</a> <!-- Use os IDs corretos das suas seções -->
-                        <a href="#services-section">O que Fazemos</a>
-                        <a href="#contact-section">Contato</a>
+                        <a href="#quem-somos">Sobre Nós</a> <!-- Use os IDs corretos das suas seções -->
+                        <a href="#o-que-fazemos">O que Fazemos</a>
+                        <a href="#contato">Contato</a>
                     </div>
                 </div>
 
@@ -280,6 +277,20 @@
 
         </div>
     </footer>
+
+<!-- Estrutura do Modal de Serviços -->
+<div id="service-modal" class="modal-overlay hidden">
+    <div class="modal-container">
+        <!-- Botão de Fechar -->
+        <button id="modal-close-btn" class="modal-close-button">&times;</button>
+        
+        <!-- Conteúdo Dinâmico do Modal -->
+        <div id="modal-content-target" class="text-center">
+            <!-- O JavaScript vai inserir o conteúdo aqui -->
+        </div>
+    </div>
+</div>
+
 
     
 <script src="scripts.js"></script>
